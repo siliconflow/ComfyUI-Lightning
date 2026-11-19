@@ -78,6 +78,7 @@ def skip_forward_orig(
     control=None,
     transformer_options={},
     attn_mask: Tensor = None,
+    timestep_zero_index=None,
 ) -> Tensor:
     patches_replace = transformer_options.get("patches_replace", {})
     ds_skip_blocks = transformer_options.get("ds_skip_blocks", [])
@@ -189,6 +190,7 @@ def teacache_skip_forward_orig(
     control=None,
     transformer_options={},
     attn_mask: Tensor = None,
+    timestep_zero_index=None,
 ) -> Tensor:
     patches_replace = transformer_options.get("patches_replace", {})
     rel_l1_threshold = transformer_options.get("rel_l1_threshold")
@@ -333,6 +335,7 @@ def fbcache_skip_forward_orig(
     control=None,
     transformer_options={},
     attn_mask: Tensor = None,
+    timestep_zero_index=None,
 ) -> Tensor:
     patches_replace = transformer_options.get("patches_replace", {})
     fbcache_threshold = transformer_options.get("fbcache_threshold")
@@ -486,6 +489,7 @@ def mbcache_skip_forward_orig(
     control=None,
     transformer_options={},
     attn_mask: Tensor = None,
+    timestep_zero_index=None,
 ) -> Tensor:
     patches_replace = transformer_options.get("patches_replace", {})
     dsb_cache_thresholds = transformer_options.get("dsb_cache_thresholds")
